@@ -1,72 +1,40 @@
-import streamlit as st
-import sys
-import os
+"""
+AI Job Market Intelligence System
+Main Application File
+"""
 
-# 🔧 Fix import path (VERY IMPORTANT)
-sys.path.append(os.path.abspath("src"))
-
-from skill_extractor import extract_skills
-from job_market_analyzer import analyze_job_market
-from skill_trend_visualizer import plot_skill_trends
-
-# -----------------------------
-# Streamlit App Config
-# -----------------------------
-st.set_page_config(
-    page_title="AI Job Market Intelligence System",
-    page_icon="📊",
-    layout="wide"
-)
-
-st.title("📊 AI Job Market Intelligence System")
-st.markdown(
-    "Analyze job descriptions, extract in-demand skills, and visualize job market trends using AI."
+from src.skill_extractor import extract_skills
+from src.job_market_analyzer import analyze_job_market
+from src.skill_trend_visualizer import (
+    plot_skill_demand_bar,
+    plot_skill_demand_pie
 )
 
 # -----------------------------
-# Sidebar
+# Sample Job Descriptions
 # -----------------------------
-st.sidebar.header("📂 Upload Job Descriptions")
-uploaded_files = st.sidebar.file_uploader(
-    "Upload job description text files",
-    type=["txt"],
-    accept_multiple_files=True
-)
+job_descriptions = [
+    "We are hiring a Data Analyst with strong Python, SQL and Statistics skills",
+    "Looking for a Machine Learning Engineer with Python, TensorFlow and Deep Learning experience",
+    "Data Scientist required with NLP, Cloud, Python and Machine Learning knowledge",
+    "Business Analyst having Power BI, SQL and Data Analysis experience"
+]
 
 # -----------------------------
-# Main Logic
+# Main Execution
 # -----------------------------
-if uploaded_files:
-    all_text = ""
+def main():
+    print("🚀 AI Job Market Intelligence System Started...\n")
 
-    for file in uploaded_files:
-        text = file.read().decode("utf-8")
-        all_text += text + "\n"
+    skill_demand = analyze_job_market(job_descriptions)
 
-    # 🔹 Skill Extraction
-    st.subheader("🧠 Extracted Skills")
-    skills = extract_skills(all_text)
+    print("📊 Job Market Skill Demand:")
+    for skill, count in skill_demand.items():
+        print(f"- {skill}: {count}")
 
-    if skills:
-        st.success(f"Total Skills Found: {len(skills)}")
-        st.write(", ".join(skills))
-    else:
-        st.warning("No skills detected.")
+    plot_skill_demand_bar(skill_demand)
+    plot_skill_demand_pie(skill_demand)
 
-    # 🔹 Job Market Analysis
-    st.subheader("📊 Job Market Skill Demand")
-    skill_demand = analyze_job_market(all_text)
 
-    if skill_demand:
-        for skill, count in skill_demand.items():
-            st.write(f"**{skill}** : {count}")
-
-        # 🔹 Visualization
-        st.subheader("📈 Skill Trend Visualization")
-        plot_skill_trends(skill_demand)
-        st.pyplot()
-    else:
-        st.warning("Not enough data to analyze trends.")
-
-else:
-    st.info("👈 Upload one or more job description `.txt` files to begin analysis.")
+if __name__ == "__main__":
+    main()
