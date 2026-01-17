@@ -1,9 +1,7 @@
-"""
-AI Job Market Intelligence System
-Main Application File
-"""
+# app.py
+# Entry point of AI Job Market Intelligence System
 
-from src.skill_extractor import extract_skills
+from src.skill_extractor import extract_skills_from_text
 from src.job_market_analyzer import analyze_job_market
 from src.skill_trend_visualizer import (
     plot_skill_demand_bar,
@@ -11,30 +9,34 @@ from src.skill_trend_visualizer import (
 )
 
 # -----------------------------
-# Sample Job Descriptions
+# Sample Input Data
 # -----------------------------
-job_descriptions = [
-    "We are hiring a Data Analyst with strong Python, SQL and Statistics skills",
-    "Looking for a Machine Learning Engineer with Python, TensorFlow and Deep Learning experience",
-    "Data Scientist required with NLP, Cloud, Python and Machine Learning knowledge",
-    "Business Analyst having Power BI, SQL and Data Analysis experience"
+sample_job_descriptions = [
+    "We are looking for a Data Analyst with strong Python, SQL, and Statistics skills.",
+    "Machine Learning Engineer required with Python, ML, Deep Learning, and TensorFlow.",
+    "Data Scientist role requiring Python, SQL, NLP, and Machine Learning experience."
 ]
 
 # -----------------------------
-# Main Execution
+# Main App Logic
 # -----------------------------
 def main():
-    print("🚀 AI Job Market Intelligence System Started...\n")
+    print("🚀 AI Job Market Intelligence System Started\n")
 
-    skill_demand = analyze_job_market(job_descriptions)
+    # Analyze job market
+    skill_demand = analyze_job_market(sample_job_descriptions)
 
-    print("📊 Job Market Skill Demand:")
+    print("📊 Job Market Skill Demand:\n")
     for skill, count in skill_demand.items():
         print(f"- {skill}: {count}")
 
+    # Visualizations
     plot_skill_demand_bar(skill_demand)
     plot_skill_demand_pie(skill_demand)
 
 
+# -----------------------------
+# Run App
+# -----------------------------
 if __name__ == "__main__":
     main()
