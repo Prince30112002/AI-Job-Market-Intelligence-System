@@ -1,0 +1,24 @@
+# Core
+python>=3.9
+
+# Data handling
+pandas
+numpy
+
+# NLP & Text Processing
+
+# Machine Learning
+scikit-learn
+
+# Visualization
+matplotlib
+seaborn
+
+# Resume / Job text parsing
+PyPDF2
+
+# Dashboard (future use)
+streamlit
+
+# Utilities
+tqdm
