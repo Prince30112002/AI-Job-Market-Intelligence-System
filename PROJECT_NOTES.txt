@@ -1,0 +1,128 @@
+AI Job Market Intelligence System
+================================
+
+Project Goal
+------------
+Build an AI-powered system to analyze job market data and identify
+in-demand skills, trends, and insights for job seekers and students.
+
+
+Current Progress
+----------------
+✔ Skill extraction module completed
+✔ Job market analyzer working
+✔ Skill demand counting implemented
+✔ Skill trend visualization script ready
+✔ Project pushed to GitHub
+
+
+Modules Overview
+----------------
+1. skill_extractor.py
+   - Extracts technical skills from job descriptions
+   - Keyword-based ATS-friendly approach
+
+2. job_market_analyzer.py
+   - Analyzes multiple job descriptions
+   - Counts skill demand frequency
+
+3. skill_trend_visualizer.py
+   - Bar chart & pie chart visualization using matplotlib
+
+4. app.py
+   - Central execution file (Streamlit-ready)
+
+
+Pending Tasks
+-------------
+- Fix import structure for Streamlit app
+- Add real job description dataset
+- Improve skill extraction with NLP
+- Add trend analysis over time
+- Deploy Streamlit app
+
+
+How to Run (CLI)
+----------------
+python src/skill_extractor.py
+python src/job_market_analyzer.py
+python src/skill_trend_visualizer.py
+
+
+Future Enhancements
+-------------------
+- Real-time job scraping
+- Location-based job trends
+- Salary insights
+- Dashboard deployment
+- Resume vs market skill gap analysis
+
+
+Author
+------
+Prince Rajak
+GitHub: https://github.com/Prince30112002
+AI Job Market Intelligence System
+================================
+
+Project Goal
+------------
+Build an AI-powered system to analyze job market data and identify
+in-demand skills, trends, and insights for job seekers and students.
+
+
+Current Progress
+----------------
+✔ Skill extraction module completed
+✔ Job market analyzer working
+✔ Skill demand counting implemented
+✔ Skill trend visualization script ready
+✔ Project pushed to GitHub
+
+
+Modules Overview
+----------------
+1. skill_extractor.py
+   - Extracts technical skills from job descriptions
+   - Keyword-based ATS-friendly approach
+
+2. job_market_analyzer.py
+   - Analyzes multiple job descriptions
+   - Counts skill demand frequency
+
+3. skill_trend_visualizer.py
+   - Bar chart & pie chart visualization using matplotlib
+
+4. app.py
+   - Central execution file (Streamlit-ready)
+
+
+Pending Tasks
+-------------
+- Fix import structure for Streamlit app
+- Add real job description dataset
+- Improve skill extraction with NLP
+- Add trend analysis over time
+- Deploy Streamlit app
+
+
+How to Run (CLI)
+----------------
+python src/skill_extractor.py
+python src/job_market_analyzer.py
+python src/skill_trend_visualizer.py
+
+
+Future Enhancements
+-------------------
+- Real-time job scraping
+- Location-based job trends
+- Salary insights
+- Dashboard deployment
+- Resume vs market skill gap analysis
+
+
+Author
+------
+Prince Rajak
+GitHub: https://github.com/Prince30112002
